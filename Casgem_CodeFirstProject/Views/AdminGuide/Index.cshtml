@@ -1,0 +1,29 @@
+﻿@model List<Casgem_CodeFirstProject.DAL.Entities.Guide>
+
+@{
+
+    Layout = "~/Views/Shared/TemplateView.cshtml";
+}
+
+
+<h2>Rehber İşlemleri</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Rehber Adı</th>
+        <th>Ünvan</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.GuideID</td>
+            <td>@item.GuideName</td>
+            <td>@item.GuideTitle</td>
+            <td><a href="/AdminGuide/DeleteGuide/@item.GuideID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminGuide/UpdateGuide/@item.GuideID" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+
+</table>

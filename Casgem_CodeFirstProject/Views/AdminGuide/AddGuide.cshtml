@@ -1,0 +1,22 @@
+﻿@model Casgem_CodeFirstProject.DAL.Entities.Guide
+
+@{
+    ViewBag.Title = "AddGuide";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Rehber Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Rehber Ad Soyad</label>
+    @Html.TextAreaFor(x => x.GuideName, new { @class = "form-control" })
+    <br />
+    <label>Rehber Ünvanı</label>
+    @Html.TextAreaFor(x => x.GuideTitle, new { @class = "form-control" })
+    <br />
+    <label>Rehber Fotoğraf Url</label>
+    @Html.TextAreaFor(x => x.GuideImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

@@ -1,0 +1,23 @@
+﻿@model Casgem_CodeFirstProject.DAL.Entities.Guide
+@{
+    ViewBag.Title = "UpdateGuide";
+    Layout = "~/Views/Shared/TemplateView.cshtml";
+}
+
+<h2>Rehber Güncelleme Sayfası</h2>
+
+
+<form method="post">
+    @Html.HiddenFor(x=> x.GuideID)
+    <label>Rehber Ad Soyad</label>
+    @Html.TextAreaFor(x => x.GuideName, new { @class = "form-control" })
+    <br />
+    <label>Rehber Ünvanı</label>
+    @Html.TextAreaFor(x => x.GuideTitle, new { @class = "form-control" })
+    <br />
+    <label>Rehber Fotoğraf Url</label>
+    @Html.TextAreaFor(x => x.GuideImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+
