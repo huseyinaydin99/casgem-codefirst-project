@@ -7,13 +7,13 @@ namespace Casgem_CodeFirstProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class mig_add_admin_entity : IMigrationMetadata
+    public sealed partial class mig_add_about : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mig_add_admin_entity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig_add_about));
         
         string IMigrationMetadata.Id
         {
-            get { return "202307121200137_mig_add_admin_entity"; }
+            get { return "202307161710259_mig_add_about"; }
         }
         
         string IMigrationMetadata.Source

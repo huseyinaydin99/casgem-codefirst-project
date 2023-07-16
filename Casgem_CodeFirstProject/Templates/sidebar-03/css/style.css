@@ -133,11 +133,10 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent; }
+  color: darkorange;
+  text-decoration: none; }
   a:hover {
-    color: #0056b3;
+    color: black;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -388,7 +387,7 @@ mark,
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  color: #6c757d; }
+  color: black; }
   .blockquote-footer::before {
     content: "\2014\00A0"; }
 
@@ -420,7 +419,7 @@ code {
   color: #e83e8c;
   word-break: break-word; }
   a > code {
-    color: inherit; }
+    color: black; }
 
 kbd {
   padding: 0.2rem 0.4rem;
@@ -2490,7 +2489,7 @@ fieldset:disabled a.btn {
 input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
-  width: 100%; }
+}
 
 .fade {
   -webkit-transition: opacity 0.15s linear;

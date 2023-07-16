@@ -3,7 +3,12 @@
     ViewBag.Title = "AddSocialMedia";
     Layout = "~/Views/Admin/Index.cshtml";
 }
-
+<div class="alert alert-primary" role="alert">
+    Giriş yapan kullanıcı: <u> @Html.Raw("@")@Session["userTravel"].ToString()</u>
+    <form action="/Login/Exit" method="post">
+        <button type="submit" class="btn btn-danger">Çıkış Yap</button>
+    </form>
+</div>
 <h2>Yeni Sosyal Medya Hesabı</h2>
 <form>
     <label>Sosyal Medya Adı: </label>
@@ -14,7 +19,4 @@
 
     <label>Rehber: </label>
     @Html.DropDownListFor(x => x.Guide.GuideID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
-
-    <label>Beni Hatırla: </label>
-<!-- @Html.CheckBoxFor(x=>x.)    -->
 </form>

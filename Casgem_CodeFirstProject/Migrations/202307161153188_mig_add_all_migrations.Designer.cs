@@ -7,18 +7,18 @@ namespace Casgem_CodeFirstProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class mig_add_relation_guide_socialmedia : IMigrationMetadata
+    public sealed partial class mig_add_all_migrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mig_add_relation_guide_socialmedia));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig_add_all_migrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "202307120808435_mig_add_relation_guide_socialmedia"; }
+            get { return "202307161153188_mig_add_all_migrations"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

@@ -7,7 +7,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Giriş Yap</title>
+    <title>Kayıt Ol</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -27,19 +27,22 @@
 
     <!-- form section start -->
     <section class="w3l-hotair-form">
-        <h1>Giriş Kapısı</h1>
+        <h1>Kayıt Formu</h1>
         <div class="container">
             <!-- /form -->
-            <div class="workinghny-form-grid">
+            <div>
                 <div class="main-hotair">
                     <div class="content-wthree">
-                        <h2>Giriş Yap</h2>
-                        <form method="post">
-                            <input type="text" class="text" name="Username" placeholder="Kullanıcı Adı" required="" autofocus />
-                            <input type="password" class="password" name="Password" placeholder="Kullanıcı Şifresi" required="" autofocus /><br />
-                            ‏‏‎‏‏‎ ‏‏‎‏‏‎ <label for="flexSwitchCheckDefault">Beni hatırla: </label> <input class="#" type="checkbox" id="flexSwitchCheckDefault">
-                            <br />
-                            <button class="btn" type="submit">Giriş Yap</button>
+                        <h2>Yeni Üye Kaydı</h2>
+                        <form action="/Login/Register" method="post">
+
+                            <div class="form-check form-switch">
+                                <input type="text" class="text" name="Username" placeholder="Kullanıcı Adı" required="" autofocus />
+                                <input type="password" class="password" name="Password" placeholder="Kullanıcı Şifresi" required="" autofocus /><br />
+                                ‏‏‎‏‏‎ ‏‏‎‏‏‎ <span id="color">Beni hatırla: </span> <input class="form-check-input" type="checkbox" value="Beni Hatırla: " id="flexSwitchCheckDefault">
+                                <br />
+                            </div>
+                            <button class="btn" type="submit">Kayıt Ol</button>
                             <br />
                             @if (Model._message != null)
                             {
@@ -51,8 +54,8 @@
                                 </div>
                             }
                         </form>
-                        <p class="account">Hesabın yok mu? <a href="/Login/Register">Kaydol</a></p>
-                        <p class="account">Yönetici misin? <a href="/Admin/Index">Yönetici Girişi Yap</a></p>
+
+                        <p class="account">Zaten hesabın var mı? <a href="/Login/Index">Giriş Yap</a></p>
                     </div>
                     <div class="w3l_form align-self">
                         <div class="left_grid_info">

@@ -8,53 +8,52 @@ using System.Web.Mvc;
 
 namespace Casgem_CodeFirstProject.Controllers
 {
-    //[Authorize]
-    public class AdminController : Controller
+    public class UserController : Controller
     {
         TravelContext travelContext = new TravelContext();
         public ActionResult Index()
         {
             /*var values = travelContext.Admins.ToList();
             return View(values);*/
-            var values = travelContext.Admins.ToList();
+            var values = travelContext.Users.ToList();
             return View(values);
         }
 
         [HttpGet]
-        public ActionResult AddAdmin()
+        public ActionResult AddUser()
         {
             return View(); ;
         }
 
         [HttpPost]
-        public ActionResult AddAdmin(Admin admin)
+        public ActionResult AddUser(User user)
         {
-            travelContext.Admins.Add(admin);
+            travelContext.Users.Add(user);
             travelContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult DeleteAdmin(int id)
+        public ActionResult DeleteUser(int id)
         {
-            var value = travelContext.Admins.Find(id);
-            travelContext.Admins.Remove(value);
+            var value = travelContext.Users.Find(id);
+            travelContext.Users.Remove(value);
             //travelContext.Guides.Add(guide);
             travelContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult UpdateAdmin(int id)
+        public ActionResult UpdateUser(int id)
         {
-            var values = travelContext.Admins.Find(id);
+            var values = travelContext.Users.Find(id);
             return View(values);
         }
 
         [HttpPost]
-        public ActionResult UpdateAdmin(Admin p)
+        public ActionResult UpdateUser(User p)
         {
-            var values = travelContext.Admins.Find(p.AdminID);
+            var values = travelContext.Users.Find(p.UserID);
             values.UserName = p.UserName;
             values.Password = p.Password;
             travelContext.SaveChanges();

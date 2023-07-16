@@ -1,4 +1,4 @@
-﻿@model List<Casgem_CodeFirstProject.DAL.Entities.Admin>
+﻿@model List<Casgem_CodeFirstProject.DAL.Entities.User>
 @{
     Layout = "~/Views/Shared/TemplateView.cshtml";
 }
@@ -9,7 +9,7 @@
         <button type="submit" class="btn btn-danger">Çıkış Yap</button>
     </form>
 </div>
-<h2>Admin İşlemleri</h2>
+<h2>Kullanıcı İşlemleri</h2>
 <table class="table table-bordered">
     <tr>
         <th>Kullanıcı Adı</th>
@@ -22,10 +22,10 @@
         <tr>
             <td>@item.UserName</td>
             <td>@item.Password</td>
-            <td><a href="/Admin/DeleteAdmin/@item.AdminID" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Admin/UpdateAdmin/@item.AdminID" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/User/DeleteUser/@item.UserID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/User/UpdateUser/@item.UserID" class="btn btn-outline-success">Güncelle</a></td>
         </tr>
     }
 
 </table>
-<a href="/Admin/AddAdmin/" class="btn btn-outline-info">Yeni Admin Ekle</a></td>
+<a href="/User/AddUser/" class="btn btn-outline-info">Yeni Kullanıcı Ekle</a></td>

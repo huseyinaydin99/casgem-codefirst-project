@@ -1,25 +1,24 @@
-﻿@model Casgem_CodeFirstProject.DAL.Entities.Guide
+﻿@model Casgem_CodeFirstProject.DAL.Entities.Admin
 
 @{
+    ViewBag.Title = "AddGuide";
     Layout = "~/Views/Shared/TemplateView.cshtml";
 }
+
 <div class="alert alert-primary" role="alert">
     Giriş yapan kullanıcı: <u> @Html.Raw("@")@Session["userTravel"].ToString()</u>
     <form action="/Login/Exit" method="post">
         <button type="submit" class="btn btn-danger">Çıkış Yap</button>
     </form>
 </div>
-<h2>Yeni Rehber Ekleme Sayfası</h2>
+<h2>Yeni Admin Ekleme Sayfası</h2>
 
 <form method="post">
-    <label>Rehber Ad Soyad</label>
-    @Html.TextBoxFor(x => x.GuideName, new { @class = "form-control" })
+    <label>Kullanıcı Adı: </label>
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
     <br />
-    <label>Rehber Ünvanı</label>
-    @Html.TextBoxFor(x => x.GuideTitle, new { @class = "form-control" })
-    <br />
-    <label>Rehber Fotoğraf Url</label>
-    @Html.TextBoxFor(x => x.GuideImageUrl, new { @class = "form-control" })
+    <label>Şifresi</label>
+    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
     <br />
     <button class="btn btn-info">Kaydet</button>
 </form>

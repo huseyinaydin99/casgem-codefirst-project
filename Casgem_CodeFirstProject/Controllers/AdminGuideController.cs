@@ -22,7 +22,7 @@ namespace Casgem_CodeFirstProject.Controllers
         [HttpGet]
         public ActionResult AddGuide()
         {
-            return RedirectToAction("Index");
+            return View();
         }
 
         [HttpPost]
@@ -33,10 +33,10 @@ namespace Casgem_CodeFirstProject.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult DeleteGuide(Guide guide)
+        [HttpGet]
+        public ActionResult DeleteGuide(int id)
         {
-            var value = travelContext.Guides.Find(guide);
+            var value = travelContext.Guides.Find(id);
             travelContext.Guides.Remove(value);
             //travelContext.Guides.Add(guide);
             travelContext.SaveChanges();

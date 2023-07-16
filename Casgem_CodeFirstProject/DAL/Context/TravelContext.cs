@@ -15,5 +15,7 @@ namespace Casgem_CodeFirstProject.DAL.Context
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<About> Abouts { get; set; }
     }
 }

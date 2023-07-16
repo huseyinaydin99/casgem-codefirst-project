@@ -129,14 +129,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminGuideController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="DAL\Context\TravelContext.cs" />
+    <Compile Include="DAL\Entities\About.cs" />
+    <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="DAL\Entities\Admin.cs" />
     <Compile Include="DAL\Entities\Booking.cs" />
     <Compile Include="DAL\Entities\Contact.cs" />
@@ -147,15 +152,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307120808435_mig_add_relation_guide_socialmedia.cs" />
-    <Compile Include="Migrations\202307120808435_mig_add_relation_guide_socialmedia.designer.cs">
-      <DependentUpon>202307120808435_mig_add_relation_guide_socialmedia.cs</DependentUpon>
+    <Compile Include="Migrations\202307161153188_mig_add_all_migrations.cs" />
+    <Compile Include="Migrations\202307161153188_mig_add_all_migrations.designer.cs">
+      <DependentUpon>202307161153188_mig_add_all_migrations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307121200137_mig_add_admin_entity.cs" />
-    <Compile Include="Migrations\202307121200137_mig_add_admin_entity.designer.cs">
-      <DependentUpon>202307121200137_mig_add_admin_entity.cs</DependentUpon>
+    <Compile Include="Migrations\202307161710259_mig_add_about.cs" />
+    <Compile Include="Migrations\202307161710259_mig_add_about.designer.cs">
+      <DependentUpon>202307161710259_mig_add_about.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\LoginMessage.cs" />
+    <Compile Include="Models\IMessage.cs" />
+    <Compile Include="Models\ErrorLoginMessage.cs" />
+    <Compile Include="Models\SuccessLoginMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -236,7 +245,6 @@
     <Content Include="Templates\go-trip-starter\starter-license-W3Layouts.txt" />
     <Content Include="Templates\Report-Login-Free\css\font-awesome.min.css" />
     <Content Include="Templates\Report-Login-Free\css\style.css" />
-    <Content Include="Templates\Report-Login-Free\css\style_1.css" />
     <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.svg" />
     <Content Include="Templates\Report-Login-Free\images\1.png" />
     <Content Include="Templates\Report-Login-Free\images\undraw_Work_time_re_hdyv.svg" />
@@ -254,6 +262,8 @@
     <Content Include="Templates\sidebar-03\js\jquery.min.js" />
     <Content Include="Templates\sidebar-03\js\main.js" />
     <Content Include="Templates\sidebar-03\js\popper.js" />
+    <Content Include="Templates\error_sound.mp3" />
+    <Content Include="Templates\error_sound.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -389,21 +399,33 @@
     <Content Include="Views\AdminGuide\AddGuide.cshtml" />
     <Content Include="Views\AdminGuide\UpdateGuide.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.eot" />
-    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff" />
-    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Templates\Report-Login-Free\fonts\FontAwesome.otf" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\SocialMedia\Index.cshtml" />
     <Content Include="Views\SocialMedia\AddSocialMedia.cshtml" />
     <Content Include="Views\Shared\_StyleLayout.cshtml" />
     <Content Include="Views\Shared\TemplateView.cshtml" />
     <Content Include="Views\AdminGuide\UpdateOfGuide.cshtml" />
+    <Content Include="Views\Admin\AddAdmin.cshtml" />
+    <Content Include="Views\Admin\UpdateAdmin.cshtml" />
+    <Content Include="Views\User\AddUser.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\UpdateUser.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\Report-Login-Free\fonts\FontAwesome.otf" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Gallery\AddGallerie.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\UpdateGallerie.cshtml" />
+    <Content Include="Views\Contact\UpdateContact.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -433,11 +455,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202307120808435_mig_add_relation_guide_socialmedia.resx">
-      <DependentUpon>202307120808435_mig_add_relation_guide_socialmedia.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307161153188_mig_add_all_migrations.resx">
+      <DependentUpon>202307161153188_mig_add_all_migrations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307121200137_mig_add_admin_entity.resx">
-      <DependentUpon>202307121200137_mig_add_admin_entity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307161710259_mig_add_about.resx">
+      <DependentUpon>202307161710259_mig_add_about.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

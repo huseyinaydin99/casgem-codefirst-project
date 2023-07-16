@@ -1,0 +1,37 @@
+﻿@model List<Casgem_CodeFirstProject.DAL.Entities.About>
+@{
+    Layout = "~/Views/Shared/TemplateView.cshtml";
+}
+<!--
+<div class="alert alert-primary" role="alert">
+    Giriş yapan kullanıcı: <u> Html.Raw("")Session["userTravel"].ToString()</u>
+    <form action="/Login/Exit" method="post">
+        <button type="submit" class="btn btn-danger">Çıkış Yap</button>
+    </form>
+</div>
+-->
+<h2>Hakkımda Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ad Soyad</th>
+        <th>Mail</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Mesaj Tarihi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NameSurname</td>
+            <td>@item.Mail</td>
+            <td>@item.Subject</td>
+            <td>@item.Message</td>
+            <td>@item.MessageDate</td>
+            <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/About/UpdateAbout/@item.AboutID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
