@@ -2,6 +2,7 @@
 #### Proje tatil sitesidir. Senaryosu admin paneli üzerinden siteye içerikler eklemek ve düzenlemek.
 #### Kullanılan teknolojiler: ASP.NET MVC 5, Entity Framework, Bootstrap, JS, CSS, MSSQL Server.
 #### Projede tek katman vardır(Presentation Layer / Gösterim Katmanı).
+#### Bir çok şey birbirinin tekrarı olduğu için tekrar tekrar yapmak sıkıyor, bende çok tekrar eden bazı şeyleri yapmaktan kaçınıyorum.
 #### Görseller:
 
 ![001](https://github.com/huseyinaydin99/casgem-codefirst-project/assets/16438043/0cb38647-9b68-40d5-8409-82ebe34a8dba)
