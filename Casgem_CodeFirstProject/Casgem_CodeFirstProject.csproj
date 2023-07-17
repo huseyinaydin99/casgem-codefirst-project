@@ -243,6 +243,7 @@
     <Content Include="Templates\go-trip-starter\index.html" />
     <Content Include="Templates\go-trip-starter\services.html" />
     <Content Include="Templates\go-trip-starter\starter-license-W3Layouts.txt" />
+    <Content Include="Templates\Report-Login-Free\css\style_1.css" />
     <Content Include="Templates\Report-Login-Free\css\font-awesome.min.css" />
     <Content Include="Templates\Report-Login-Free\css\style.css" />
     <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.svg" />
@@ -418,9 +419,6 @@
     <Content Include="Templates\Report-Login-Free\fonts\FontAwesome.otf" />
     <Content Include="Views\About\UpdateAbout.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Gallery\AddGallerie.cshtml" />
-    <Content Include="Views\Gallery\Index.cshtml" />
-    <Content Include="Views\Gallery\UpdateGallerie.cshtml" />
     <Content Include="Views\Contact\UpdateContact.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
